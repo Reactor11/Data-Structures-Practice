@@ -7,6 +7,7 @@ using namespace std;
 #define fdi(x,n) for(ll i=x-1;i>=n;i--)
 #define fdj(x,n) for(ll j=x-1;j>=n;j--)
 #define debug(x) cout<<#x<<" "<<x<<endl
+#define mem(x,val) memset((x),(val),sizeof(x))
 #define pb push_back
 #define rtcheck cout<<"Working Till Here."<<endl;exit(0);
 #define inf 1e18
@@ -22,7 +23,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-      
+
     }
     return 0;
 }
