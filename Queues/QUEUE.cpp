@@ -55,7 +55,7 @@ void print(){
     cout<<endl;
 }
 
-void func(queue<int> &q){
+void func(queue<int> &q){ // Reverse the queue
     if(q.empty()) return;
     else{
         int x;
@@ -63,7 +63,37 @@ void func(queue<int> &q){
         q.pop();
         func(q);
         q.push(x);
-        cout<<x<<" ";
+        // cout<<x<<" ";
+    }
+}
+
+void func1(queue<int> &q,int k){ // Reverse after first k elements
+    if(!q.empty() && k!=0 && k<=q.size()){
+            int x;
+            x = q.front();
+            q.pop();
+            func1(q,k-1);
+            q.push(x);
+    }
+    else return;
+    func(q);
+}
+
+void func2(queue<int> &q,int k){ // Reverse first k elements.
+    stack<int> s;
+    int cnt=0;
+    while(cnt++<k){
+        s.push(q.front());
+        q.pop();
+    }
+    while(!s.empty()){
+        q.push(s.top());
+        s.pop();
+    }
+    cnt=0;
+    while(cnt++ < q.size()-k){
+        q.push(q.front());
+        q.pop();
     }
 }
 
@@ -93,8 +123,7 @@ int main(){
     q.push(6);
     q.push(7);
     q.push(8);
-    func(q);
-    cout<<&q;
+    func1(q,1);
     cout<<endl;
     while(!q.empty()){
         cout<<q.front()<<" ";
