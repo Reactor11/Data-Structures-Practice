@@ -54,20 +54,50 @@ void print(){
     }
     cout<<endl;
 }
+
+void func(queue<int> &q){
+    if(q.empty()) return;
+    else{
+        int x;
+        x = q.front();
+        q.pop();
+        func(q);
+        q.push(x);
+        cout<<x<<" ";
+    }
+}
+
 int main(){
-    enque(1);
-    enque(2);
-    enque(3);
-    enque(4);
-    enque(5);
-    print();
-    dequ();
-    dequ();
-    print();
-    cout<<"Front Data : "<<front_data()<<endl;
-    cout<<"Rear Data : "<<rear_data()<<endl;
-    dequ();
-    dequ();
-    dequ();
-    print();
+    // enque(1);
+    // enque(2);
+    // enque(3);
+    // enque(4);
+    // enque(5);
+    // print();
+    // dequ();
+    // dequ();
+    // print();
+    // cout<<"Front Data : "<<front_data()<<endl;
+    // cout<<"Rear Data : "<<rear_data()<<endl;
+    // dequ();
+    // dequ();
+    // dequ();
+    // print();
+
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    q.push(6);
+    q.push(7);
+    q.push(8);
+    func(q);
+    cout<<&q;
+    cout<<endl;
+    while(!q.empty()){
+        cout<<q.front()<<" ";
+        q.pop();
+    }
 }
