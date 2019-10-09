@@ -13,12 +13,12 @@ using namespace std;
 #define inf 1e18
 #define endl "\n"
 
-ll ans;
+ll ans=1;
 
 void power_(ll base,ll power){
-    if(b<0) return;
-    if(b%2==1){
-        ans = ans*base;
+    if(power<=0) return;
+    if(power%2==1){
+        ans = (ans*base) %1000000007;
     }
     base = ((base % 1000000007) * (base % 1000000007)) % 1000000007;
     power = power/2;
@@ -27,12 +27,12 @@ void power_(ll base,ll power){
 
 int main(){
     fast_veet;
-    #ifndef ONLINE_JUDGE
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
-    #endif
+    // #ifndef ONLINE_JUDGE
+    // freopen("in.txt","r",stdin);
+    // freopen("out.txt","w",stdout);
+    // #endif
 
-    power_(2,10);
+    power_(2,10000);
     cout<<ans;
     return 0;
 }
