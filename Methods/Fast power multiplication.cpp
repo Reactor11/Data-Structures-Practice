@@ -32,7 +32,7 @@ int main(){
     freopen("out.txt","w",stdout);
     #endif
 
-    cout<<power_(2,10);
-
+    power_(2,10);
+    cout<<ans;
     return 0;
 }
