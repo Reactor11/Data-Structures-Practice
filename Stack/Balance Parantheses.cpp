@@ -16,5 +16,5 @@ int main(){
         }
     }
     if(s.empty()) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;1
+    else cout<<"NO"<<endl;
 }
