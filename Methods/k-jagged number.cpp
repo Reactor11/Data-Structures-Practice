@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Wrong code check geeks for geeks.
 // k-jagged number is a number if smallest prime factor >= k.
 // first ten 7-jagged number.
 bool isPrime(long long int n){
@@ -11,7 +11,7 @@ bool isPrime(long long int n){
 }
 
 bool isJagged(int x,int k){
-	int temp=2;
+	int temp=3;
 	while(temp!=x){
 		if(x%temp==0 && isPrime(temp)){
 			if(temp >= k) return true;
