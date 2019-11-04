@@ -3,23 +3,38 @@ using namespace std;
 
 // P - smooth number is a number if largest prime factor <= p.
 // first ten 10-smooth number.
-bool isPrime(long long int n){
-    if (n<2) return false;
-    for(int i=2;i*i<=n;i++)
-        if(n%i==0) return false;
-    return true;
-}
+bool isSmooth(int n, int p)
+{
+    int maximum = -1;
 
-bool isSmooth(int x,int p){
-	int temp=x;
-	while(temp){
-		if(x%temp==0 && isPrime(temp)){
-			if(temp >= p) return true;
-		}
-		temp--;
-	}
-//	if(temp <= p) return true;
-	return false;
+    // prime factorise it by 2
+    while (!(n % 2))
+    {
+        // if the number is divisible by 2
+        maximum = max(maximum, 2);
+        n = n/2;
+    }
+
+    // check for all the possible numbers
+    // that can divide it
+    for (int i = 3; i <= sqrt(n); i += 2)
+    {
+        // prime factorize it by i
+        while (n % i == 0)
+        {
+            // stores the maximum if maximum
+            // and i, if i divides the number
+            maximum = max(maximum,i);
+            n = n / i;
+        }
+    }
+
+    // if n at the end is a prime number,
+    // then it a divisor itself
+    if (n > 2)
+        maximum = max(maximum, n);
+
+    return (maximum <= p);
 }
 
 
