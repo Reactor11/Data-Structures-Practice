@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// N => N*N + 1 should be (max. prime factor of n*n+1) >= 2*N
+// N -> N*N + 1 should be (max. prime factor of n*n+1) >= 2*N
 bool isPrime(long long int n){
     if (n<2) return false;
     for(int i=2;i*i<=n;i++)
@@ -16,8 +16,7 @@ bool StromerNumber(long long int n){
         if(t%n==0 && isPrime(n)) break;
         n--;
     }
-    if(n>=2*x) return true;
-    else return false;
+    return (n>=2*x);
 }
 int main(){
     long long int n;
