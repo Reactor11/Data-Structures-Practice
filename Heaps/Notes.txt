@@ -1,0 +1,34 @@
+Max Heap :
+    * Every parent node should be greater than it its child.
+    * Any kind of traversal does not guarantee that it will give sorted order.
+    * In case of array(1-Based indexing) :
+        - Parent = index/2
+        - left child = index*2
+        - right child = index*2 + 1
+    * Getting max element takes O(1) since it is on root(index = 1)
+    * Number of nodes in a particular level = 2^n
+    * Insertion = O(Log(N))
+    * Deletion  = O(Log(N))
+    * increased key operation : Key is increased to any new number then,
+                                to maintain the property simply apply siftUp
+                                operation.
+    * decreased key operation : Key is decreased to any new number then,
+                                to maintain the property simply apply siftDown
+                                operation.
+    * Operations : 1. Insertion
+                   2. Deletion
+                   3. Extract Max
+                   4. Get MAX
+                   5. Empty
+                   6. Increase key
+                   7. Decrease key
+    * Use Case :
+                1. Getting k largest number. //O(k*Log(n))
+                2. Priority Queue.
+
+Heap sort :
+    * Complexity : 1. Time : O(NLog(N))
+                   2. Space : O(1)
+    * In-place algorithm.
+
+To-Do : Convert MIN Heap to MAX heap
